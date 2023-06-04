@@ -1,3 +1,9 @@
+/*
+code from on meguna at
+https://github.com/meguna/websockets-chat-demo/tree/master
+*/
+
+
 /**
  * send a request to join or start a chatroom.
  */
