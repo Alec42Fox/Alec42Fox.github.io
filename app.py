@@ -1,3 +1,8 @@
+"""
+code from on meguna at
+https://github.com/meguna/websockets-chat-demo/tree/master
+"""
+
 #!/usr/bin/env python
 
 import asyncio
