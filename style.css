@@ -1,9 +1,22 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+$c1: black;
 
-.main-wrapper {
-  margin-top: 50px;
+* {
+	user-select: none;
 }
 
-#name-span::before {
-  content: "user "
+body {	
+	background-color: $c1;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;	
+}
+
+iframe {
+	width: calc(100% + 112px);
+	height: 58px;
+	opacity: 0.85;
+	position: absolute;
+	top: -6px;
+	left: -110px;
 }
