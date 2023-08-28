@@ -130,7 +130,7 @@ const typoSize = Math.max(
 	Math.round(sizes.w * 0.69)
 );
 const createTypo = (font) => {
-	const word = 'F O X';
+	const word = '4 2';
 	const typoProperties = {
 		font: font,
 		size: typoSize,
