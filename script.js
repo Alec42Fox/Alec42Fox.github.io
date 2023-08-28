@@ -1,3 +1,21 @@
+/*
+ * THOUSAND STARS (to be precise, 8000)
+ * Made with ThreeJS - Enjoy!
+ *
+ * Use cursor to rotate stars and typography in space.
+ * On mobile touch + drag screen.
+ *
+ * You can enjoy some 90s' music by Tori Amos while you browse the sky via the SoundCloud Widget API.
+ *
+ * Some coding techniques are taken after Bruno Simon's course and a ThreeJS example:
+ * https://threejs-journey.xyz/
+ * https://threejs.org/examples/?q=particles#webgl_points_billboards
+ *
+ * #066 - #100DaysOfCode
+ * By ilithya | 2021
+ * https://www.ilithya.rocks/
+ * https://twitter.com/ilithya_rocks
+ */
 
 // Canvas
 const canvas = document.querySelector("#canvas-wrapper");
