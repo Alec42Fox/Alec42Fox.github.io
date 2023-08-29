@@ -130,7 +130,7 @@ const typoSize = Math.max(
 	Math.round(sizes.w * 0.69)
 );
 const createTypo = (font) => {
-	const word = '4 2';
+	const word = 'alec42fox';
 	const typoProperties = {
 		font: font,
 		size: typoSize,
@@ -194,8 +194,8 @@ const tick = () => {
 	uniforms.u_time.value = elapsedTime;
 
 	// Animate the particles + typo
-	const rotX = 0;//Math.sin(elapsedTime * 0.8) * 0.3;
-	const rotY = 0;//Math.sin(elapsedTime * 1.2) * 0.3;
+	const rotX = Math.sin(elapsedTime * 0.02);
+	const rotY = Math.sin(elapsedTime * 0.05);
 	particles.rotation.x = rotX;
 	particles.rotation.y = rotY;
 	// Animate only on start
