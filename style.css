@@ -18,12 +18,12 @@ body {
   width: 600px;
   height: 400px;
   border: 1px solid #fff;
-  margin: 30px auto 0px;
-  line-height: 0px;
+  margin: 30px auto 1px;
+  line-height: 1px;
 }
 
 @mixin shadow($offset, $color) {
-  $size: 0px;
+  $size: 1px;
   $noffset: -$offset;
   box-shadow: $offset 0px 0px $size $color,
             0px $offset 0px $size $color,
