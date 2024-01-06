@@ -18,70 +18,37 @@ body {
   width: 600px;
   height: 400px;
   border: 1px solid #fff;
-  margin: 30px auto 1px;
-  line-height: 1px;
+  margin: 30px auto 0px;
+  line-height: 0px;
 }
-
-@mixin shadow($offset, $color) {
-  $size: 1px;
-  $noffset: -$offset;
-  box-shadow: $offset 0px 0px $size $color,
-            0px $offset 0px $size $color,
-            $noffset 0px 0px $size $color,
-            0px $noffset 0px $size $color,
-            $offset $offset 0px $size $color,
-            $noffset $offset 0px $size $color,
-            $offset $noffset 0px $size $color,
-            $noffset $noffset 0px $size $color;
-}
-
-$cell-size: 20px;
-//$hover-color: #fafafa;
-$hover-color: rgba(230, 230, 230, 0.4);
 
 .hoverable {
-  width: $cell-size;
-  height: $cell-size;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   margin: 0px;
-  
-  // @include shadow($cell-size, transparent);
-  box-shadow: 20px 0px 0px 0px transparent,
-              -20px 0px 0px 0px transparent,
-              0px 20px 0px 0px transparent,
-              0px -20px 0px 0px transparent;
-
+  box-shadow: 20px 0px 0px 0px transparent, -20px 0px 0px 0px transparent, 0px 20px 0px 0px transparent, 0px -20px 0px 0px transparent;
   transition: box-shadow 0.5s, background-color 0.7s;
-  &:before {
-    content: '';
-    width: $cell-size;
-    height: $cell-size;
-    display: block;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    
-    box-shadow: 20px 20px 0px 0px transparent,
-                -20px 20px 0px 0px transparent,
-                20px -20px 0px 0px transparent,
-                -20px -20px 0px 0px transparent;
-    transition: box-shadow 0.3s;
-  }
-  &:hover {
-    box-shadow: 20px 0px 0px 0px $hover-color,
-            -20px 0px 0px 0px $hover-color,
-            0px 20px 0px 0px $hover-color,
-            0px -20px 0px 0px $hover-color;
-    background-color: $hover-color;
-    transition: none;
-  }
-  &:hover:before {
-    content: '';
-    box-shadow: 20px 20px 0px 0px $hover-color,
-                -20px 20px 0px 0px $hover-color,
-                20px -20px 0px 0px $hover-color,
-                -20px -20px 0px 0px $hover-color;
-    transition: none;
-  }
+}
+.hoverable:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 20px 20px 0px 0px transparent, -20px 20px 0px 0px transparent, 20px -20px 0px 0px transparent, -20px -20px 0px 0px transparent;
+  transition: box-shadow 0.3s;
+}
+.hoverable:hover {
+  box-shadow: 20px 0px 0px 0px rgba(230, 230, 230, 0.4), -20px 0px 0px 0px rgba(230, 230, 230, 0.4), 0px 20px 0px 0px rgba(230, 230, 230, 0.4), 0px -20px 0px 0px rgba(230, 230, 230, 0.4);
+  background-color: rgba(230, 230, 230, 0.4);
+  transition: none;
+}
+.hoverable:hover:before {
+  content: "";
+  box-shadow: 20px 20px 0px 0px rgba(230, 230, 230, 0.4), -20px 20px 0px 0px rgba(230, 230, 230, 0.4), 20px -20px 0px 0px rgba(230, 230, 230, 0.4), -20px -20px 0px 0px rgba(230, 230, 230, 0.4);
+  transition: none;
 }
