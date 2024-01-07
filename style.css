@@ -14,41 +14,30 @@ body {
   overflow: hidden;
 }
 
-.container {
-  width: 600px;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
   height: 400px;
-  border: 1px solid #fff;
-  margin: 30px auto 0px;
-  line-height: 0px;
 }
 
-.hoverable {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin: 0px;
-  box-shadow: 20px 0px 0px 0px transparent, -20px 0px 0px 0px transparent, 0px 20px 0px 0px transparent, 0px -20px 0px 0px transparent;
-  transition: box-shadow 0.5s, background-color 0.7s;
+.grid__item {
+  height: 60px;
+  width: 60px;
+  background: grey;
+  opacity: 0;
+  transition: opacity 2s ease 0.4s, transform 0.8s ease;
+  transform: scale(1);
 }
-.hoverable:before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  box-shadow: 20px 20px 0px 0px transparent, -20px 20px 0px 0px transparent, 20px -20px 0px 0px transparent, -20px -20px 0px 0px transparent;
-  transition: box-shadow 0.3s;
+
+.grid__item:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  transform: scale(1.04);
 }
-.hoverable:hover {
-  box-shadow: 20px 0px 0px 0px rgba(230, 230, 230, 0.4), -20px 0px 0px 0px rgba(230, 230, 230, 0.4), 0px 20px 0px 0px rgba(230, 230, 230, 0.4), 0px -20px 0px 0px rgba(230, 230, 230, 0.4);
-  background-color: rgba(230, 230, 230, 0.4);
-  transition: none;
-}
-.hoverable:hover:before {
-  content: "";
-  box-shadow: 20px 20px 0px 0px rgba(230, 230, 230, 0.4), -20px 20px 0px 0px rgba(230, 230, 230, 0.4), 20px -20px 0px 0px rgba(230, 230, 230, 0.4), -20px -20px 0px 0px rgba(230, 230, 230, 0.4);
-  transition: none;
+
+/* Global Styles */
+body {
+  display: flex;
+  justify-content: center;
 }
