@@ -7,10 +7,6 @@ p {
     color: #333;
     text-align: center;
 }
-br {
-   display: block;
-   margin: 10px 0;
-}
 
 .contener {
     background-color: #fff;
