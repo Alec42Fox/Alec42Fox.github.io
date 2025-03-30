@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alec Fox's Portfolio</title>
@@ -110,4 +111,73 @@
 </footer>
 
 </body>
+	<script>
+// Set up the scene, camera, and renderer
+let scene, camera, renderer, stars;
+let starGeometry, starMaterial;
+
+function init() {
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Create a star field
+    starGeometry = new THREE.BufferGeometry();
+    const starCount = 5000;
+    const positions = new Float32Array(starCount * 3); // 3 for X, Y, Z coordinates
+
+    for (let i = 0; i < starCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 1000; // X position
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 1000; // Y position
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 1000; // Z position
+    }
+
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    starMaterial = new THREE.PointsMaterial({
+        color: 0x888888, // Star color
+        size: 0.5,
+        sizeAttenuation: true
+    });
+
+    stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
+
+    camera.position.z = 500;
+
+    animate();
+}
+
+// Update stars position for parallax effect based on scroll
+window.addEventListener('scroll', () => {
+    let scrollSpeed = window.scrollY / 1000; // Adjust sensitivity here
+    camera.position.z = 500 + scrollSpeed * 300; // Move camera for parallax effect
+});
+
+// The animate loop
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Star movement for a dynamic effect
+    stars.rotation.x += 0.0001;
+    stars.rotation.y += 0.0001;
+
+    renderer.render(scene, camera);
+}
+
+// Adjust renderer size when window is resized
+window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+});
+
+// Call the init function to start the scene
+init();
+</script>
+
 </html>
